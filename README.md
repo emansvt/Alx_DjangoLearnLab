@@ -1,1 +1,1 @@
-First Django project
+First Django project change
