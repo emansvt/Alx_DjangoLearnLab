@@ -1,4 +1,5 @@
 from django.test import TestCase
+<<<<<<< HEAD
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from .models import Post, Comment
@@ -44,3 +45,7 @@ class BlogTests(TestCase):
         response = self.client.post(reverse('delete-comment', args=[1, comment.id]))
         self.assertEqual(response.status_code, 302)  # redirect after delete
         self.assertFalse(Comment.objects.filter(id=comment.id).exists())
+=======
+
+# Create your tests here.
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

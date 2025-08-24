@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework import viewsets, permissions, status
 from .models import Post, Comment, Like
 from .serializers import PostSerializer, CommentSerializer
@@ -9,14 +10,23 @@ from rest_framework.decorators import api_view
 from rest_framework import generics, permissions, viewsets
 
 
+=======
+from rest_framework import viewsets, permissions
+from .models import Post, Comment
+from .serializers import PostSerializer, CommentSerializer
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+<<<<<<< HEAD
     permission_classes = [permissions.IsAuthenticated]
 
     def get_post(self, pk):
         return generics.get_object_or_404(Post, pk=pk)
+=======
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -24,6 +34,7 @@ class PostViewSet(viewsets.ModelViewSet):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+<<<<<<< HEAD
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
@@ -69,3 +80,11 @@ def unlike_post(request, pk):
         return Response({"message": "Post unliked."}, status=204)
     except Like.DoesNotExist:
         return Response({"message": "You haven't liked this post."}, status=400)
+=======
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+    "Post.objects.filter(author__in=following_users).order_by", "following.all()"
+    "generics.get_object_or_404(Post, pk=pk)", "Like.objects.get_or_create(user=request.user, post=post)", "Notification.objects.create"
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

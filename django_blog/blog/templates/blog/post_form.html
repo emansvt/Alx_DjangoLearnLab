@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'blog/base.html' %}
 
 {% block content %}
@@ -8,3 +9,11 @@
     <button type="submit" class="btn btn-success">Save</button>
   </form>
 {% endblock %}
+=======
+<h1>{% if post %}Edit Post{% else %}Create Post{% endif %}</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

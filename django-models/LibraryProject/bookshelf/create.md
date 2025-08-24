@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Create a Book Instance
 
 To create a new Book instance with the title "1984", author "George Orwell", and publication year 1949, use the following command:
@@ -15,3 +16,13 @@ print(new_book)
 1984 by George Orwell (1949)
 
 This documents the steps and the expected output for creating a new book instance in Django using the ORM.
+=======
+### Create Operation
+
+Command:
+```python
+from bookshelf.models import Book
+Book.objects.create(title="1984", author="George Orwell", publication_year=1949)
+book = Book(title="1984", author="George Orwell", publication_year=1949)
+book.save()
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

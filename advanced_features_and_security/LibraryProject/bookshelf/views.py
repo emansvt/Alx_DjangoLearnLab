@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.contrib.auth.decorators import permission_required
 from .models import Book
@@ -20,6 +21,22 @@ def some_view(request):
         if form.is_valid():
             # Process the form data
             return redirect('success_url')  
+=======
+from django.shortcuts import render, redirect
+from .models import Book
+from .forms import ExampleForm  # Import the form
+
+def book_list(request):
+    books = Book.objects.all()
+    return render(request, 'bookshelf/book_list.html', {'books': books})
+
+def example_view(request):
+    if request.method == 'POST':
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('book_list')  # Redirect after successful form submission
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
     else:
         form = ExampleForm()
 

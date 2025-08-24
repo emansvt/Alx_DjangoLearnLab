@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'blog/base.html' %}
 
 {% block content %}
@@ -11,3 +12,11 @@
     <a href="{% url 'post-detail' post.id %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}
+=======
+<h1>Are you sure you want to delete "{{ post.title }}"?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+<a href="{% url 'post-detail' post.pk %}">Cancel</a>
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.conf import settings
 
@@ -25,12 +26,15 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+=======
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
     publication_year = models.IntegerField()
 
+<<<<<<< HEAD
     class Meta:
         permissions = [
             ("can_view", "Can view book"),
@@ -38,3 +42,11 @@ class Book(models.Model):
             ("can_edit", "Can edit book"),
             ("can_delete", "Can delete book"),
         ]
+=======
+    def __str__(self):
+        return self.title
+
+"date_of_birth", "profile_photo"
+"class CustomUser(AbstractUser):",
+["class CustomUserManager(BaseUserManager):", "create_user", "create_superuser"]
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

@@ -2,7 +2,11 @@
 URL configuration for LibraryProject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
+<<<<<<< HEAD
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
+=======
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -19,7 +23,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('bookshelf/', include("bookshelf.urls")),
     path('relationship_app/', include("relationship_app.urls")),
     path('accounts/', include('relationship_app.urls'))
 ]
+=======
+    path('', include('relationship_app.urls')),
+]
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

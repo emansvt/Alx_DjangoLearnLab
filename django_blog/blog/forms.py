@@ -1,4 +1,5 @@
 from django import forms
+<<<<<<< HEAD
 from .models import Post, Comment, Tag
 from taggit.forms import TagWidget
 
@@ -19,8 +20,19 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email']
+=======
+from .models import Comment
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
+<<<<<<< HEAD
+=======
+        widgets = {
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Write your comment here...'}),
+            
+        }
+"TagWidget()", "tags"
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

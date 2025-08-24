@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 
 class Notification(models.Model):
     recipient = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='notifications', on_delete=models.CASCADE)
+<<<<<<< HEAD
     actor = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='actor_notifications', on_delete=models.CASCADE)
     verb = models.CharField(max_length=255)
     target_content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -12,3 +13,15 @@ class Notification(models.Model):
     target = GenericForeignKey('target_content_type', 'target_object_id')
     timestamp = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)
+=======
+    actor = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='actor', on_delete=models.CASCADE)
+    verb = models.CharField(max_length=255)
+    target_content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, blank=True, null=True)
+    target_object_id = models.PositiveIntegerField(blank=True, null=True)
+    target = GenericForeignKey('target_content_type', 'target_object_id')
+    timestamp = models.DateTimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-timestamp']
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

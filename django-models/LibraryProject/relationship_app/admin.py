@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
+<<<<<<< HEAD
 from django.contrib import admin
 from .models import Author, Book, Librarian, Library, UserProfile
 
@@ -38,3 +39,5 @@ class LibraryAdmin(RelationAdmin):
 class UserProfileAdmin(RelationAdmin):
     list_display = ("role", "user")
     list_filter = ('role',)
+=======
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

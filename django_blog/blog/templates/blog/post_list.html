@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'blog/base.html' %}
 
 {% block content %}
@@ -15,3 +16,13 @@
     {% endfor %}
   </ul>
 {% endblock %}
+=======
+<h1>Blog Posts</h1>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a> - {{ post.published_date }}
+        </li>
+    {% endfor %}
+</ul>
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3

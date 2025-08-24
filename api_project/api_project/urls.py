@@ -2,7 +2,11 @@
 URL configuration for api_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
+<<<<<<< HEAD
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
+=======
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,11 +18,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+<<<<<<< HEAD
     path("admin/", admin.site.urls),
     path('api/', include('api.urls')),
 ]
+=======
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
+]
+ 
+
+ 
+>>>>>>> 8bb8dda1a481287b184dd5feb1ec3e7f69e36ec3
