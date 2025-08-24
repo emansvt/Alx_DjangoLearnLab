@@ -1,1 +1,1 @@
-Create LibraryProject
+This is introduction to Django

@@ -1,1 +1,1 @@
-New Directory creation
+This is introduction to Django

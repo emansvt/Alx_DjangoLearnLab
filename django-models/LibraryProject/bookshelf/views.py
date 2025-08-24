@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Welcome to my book store.")
+from django.http import HttpRequest, HttpResponse
 
 # Create your views here.
+
+def homepage(request):
+    template = "bookshelf/home.html/"
+    return render(request, template_name=template, context={})
