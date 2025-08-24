@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+  </head>
+  <body>
+    <h1>Book List</h1>
+    <p><a href="{% url 'add_book' %}">➕ Add Book</a></p>
+    <ul>
+      {% for b in books %}
+        <li>
+          <b>{{ b.title }}</b> — {{ b.author }} ({{ b.published_year }})
+          | <a href="{% url 'edit_book' b.pk %}">✏️ Edit</a>
+          | <a href="{% url 'delete_book' b.pk %}">🗑️ Delete</a>
+        </li>
+      {% empty %}
+        <li>No books available.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
